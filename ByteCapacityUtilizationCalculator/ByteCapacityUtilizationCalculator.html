@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte容量計算機</title>
+    <link rel="stylesheet" href="ByteCapacityUtilizationCalculator.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Byte容量計算機</h1>
+
+        <!-- 最大容量入力 -->
+        <div class="input-group">
+            <label for="maxCapacity">最大容量領域</label>
+            <input type="number" id="maxCapacity" placeholder="0"> <!-- 最大容量を入力 -->
+            <select id="maxUnit"> <!-- 単位を選択 -->
+                <option value="1">バイト(B)</option>
+                <option value="1024">キロバイト(KB)</option>
+                <option value="1048576">メガバイト(MB)</option>
+                <option value="1073741824">ギガバイト(GB)</option>
+                <option value="1099511627776">テラバイト(TB)</option>
+            </select>
+        </div>
+
+        <!-- 現在使用済容量入力 -->
+        <div class="input-group">
+            <label for="usedCapacity">現在使用容量</label>
+            <input type="number" id="usedCapacity" placeholder="0"> <!-- 現在使用容量を入力 -->
+            <select id="usedUnit"> <!-- 単位を選択 -->
+                <option value="1">バイト(B)</option>
+                <option value="1024">キロバイト(KB)</option>
+                <option value="1048576">メガバイト(MB)</option>
+                <option value="1073741824">ギガバイト(GB)</option>
+                <option value="1099511627776">テラバイト(TB)</option>
+            </select>
+        </div>
+
+        <!-- ボタン群 -->
+        <div class="button-group">
+            <button onclick="calculate()">計算する</button> <!-- 計算ボタン -->
+            <button onclick="clearFields()">クリア</button> <!-- クリアボタン -->
+        </div>
+
+        <!-- 計算結果表示 -->
+        <div class="result" id="result">
+            <h2>出力結果</h2>
+            <div>使用率: <span id="usageRate"></span>%</div> <!-- 使用率の表示 -->
+            <div>未使用率: <span id="unusedRate"></span>%</div> <!-- 未使用率の表示 -->
+            <div>使用: <span id="usageFraction"></span>割合</div> <!-- 使用割合の表示 -->
+            <div>未使用: <span id="unusedFraction"></span>割合</div> <!-- 未使用割合の表示 -->
+            <div class="bytes">
+                <div>使用byte数:</div>
+                <div>バイト(B): <span id="usedBytesB"></span></div> <!-- 使用バイト数の表示 -->
+                <div>キロバイト(KB): <span id="usedBytesKB"></span></div> <!-- 使用キロバイト数の表示 -->
+                <div>メガバイト(MB): <span id="usedBytesMB"></span></div> <!-- 使用メガバイト数の表示 -->
+                <div>ギガバイト(GB): <span id="usedBytesGB"></span></div> <!-- 使用ギガバイト数の表示 -->
+                <div>テラバイト(TB): <span id="usedBytesTB"></span></div> <!-- 使用テラバイト数の表示 -->
+            </div>
+            <div class="bytes">
+                <div>未使用byte数:</div>
+                <div>バイト(B): <span id="unusedBytesB"></span></div> <!-- 未使用バイト数の表示 -->
+                <div>キロバイト(KB): <span id="unusedBytesKB"></span></div> <!-- 未使用キロバイト数の表示 -->
+                <div>メガバイト(MB): <span id="unusedBytesMB"></span></div> <!-- 未使用メガバイト数の表示 -->
+                <div>ギガバイト(GB): <span id="unusedBytesGB"></span></div> <!-- 未使用ギガバイト数の表示 -->
+                <div>テラバイト(TB): <span id="unusedBytesTB"></span></div> <!-- 未使用テラバイト数の表示 -->
+            </div>
+        </div>
+        <div class="copy-content">
+            <small class="copy">&copy; 2024 H.K</small>
+        </div>
+    </div>
+
+    <script src="ByteCapacityUtilizationCalculator.js"></script>
+</body>
+</html>
